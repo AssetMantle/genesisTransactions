@@ -15,7 +15,7 @@ echo "export PATH=\"\$PATH:\$GOPATH/bin:\$GOROOT/bin\"" >> ~/.bashrc
 sleep 1.0
 $(which bash) -c 'source $HOME/.bashrc'
 sleep 1.0
-git clone -b v0.3.0-RC https://github.com/AssetMantle/node.git
+git clone -b v0.3.0 https://github.com/AssetMantle/node.git
 cd node && make install
 mantleNode version --long
 mantleNode unsafe-reset-all

@@ -50,7 +50,7 @@
 - Clone the repository of MantleNode
 
   ```shell
-  git clone -b v0.3.0-RC https://github.com/AssetMantle/node.git
+  git clone -b v0.3.0 https://github.com/AssetMantle/node.git
   ```
 
 - Install dependencies & make mantleNode binary

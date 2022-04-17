@@ -2,7 +2,7 @@
 # shellcheck disable=SC2016
 
 set -e
-set -x
+set -i
 
 sleep 0.5
 sudo apt-get update && sudo apt-get upgrade -y
@@ -19,5 +19,3 @@ git clone -b v0.3.0 https://github.com/AssetMantle/node.git
 cd node && make install
 mantleNode version --long
 mantleNode unsafe-reset-all
-
-set +x

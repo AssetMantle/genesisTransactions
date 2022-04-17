@@ -13,7 +13,7 @@ echo "export GOPATH=\"\$HOME/.go\"" >> ~/.bashrc
 echo "export GOROOT=\"/usr/local/go\"" >> ~/.bashrc
 echo "export PATH=\"\$PATH:\$GOPATH/bin:\$GOROOT/bin\"" >> ~/.bashrc
 sleep 1.0
-/usr/bin/bash -c 'source $HOME/.bashrc'
+source $HOME/.bashrc
 sleep 1.0
 git clone -b v0.3.0 https://github.com/AssetMantle/node.git
 cd node && git checkout -b v0.3.0

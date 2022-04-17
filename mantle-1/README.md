@@ -67,7 +67,7 @@
 
 - Worried about typing? Below is a one-liner to install the mantleNode.
 
-> curl -fsSL https://raw.githubusercontent.com/AssetMantle/genesisTransactions/main/mantle-1/install-node.bash | bash -
+> curl -fsSL https://raw.githubusercontent.com/AssetMantle/genesisTransactions/main/mantle-1/install-node.bash | bash -i -
 
 <a name="genesis-validator"></a>
 ## Pre Genesis Validator Setup

@@ -53,6 +53,18 @@
   git clone -b v0.3.0 https://github.com/AssetMantle/node.git
   ```
 
+- Checking out the current released version
+
+  ```shell
+  git checkout -b v0.3.0
+  ```
+
+- Rechecking the current released tag version
+
+  ```shell
+  git describe --exact-match --tags $(git log -n1 --pretty='%h')
+  ```
+
 - Install dependencies & make mantleNode binary
 
   ```shell

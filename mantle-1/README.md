@@ -62,6 +62,7 @@
   ```shell
   mantleNode version
   ```
+  > NOTE: Plese make sure the output of this command is  HEAD-5b2b0dcb37b107b0e0c1eaf9e907aa9f1a1992d9
 
 ## Pre Genesis Validator Setup
 

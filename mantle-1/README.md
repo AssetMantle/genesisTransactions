@@ -1,6 +1,8 @@
 # mantle-1
 The first main-net of AssetMantle's mantle-1 chain with basic token functionality release.
 
+> Final Genesis and Peer files published
+
 ## Description
 This document describes how to setup a mantle-1 chain node. 
 

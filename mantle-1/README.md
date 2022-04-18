@@ -49,20 +49,10 @@
 
 - Clone the repository of MantleNode
 
-  ```shell
-  git clone -b v0.3.0 https://github.com/AssetMantle/node.git
-  ```
-
-- Checking out the current released version
-
-  ```shell
-  git checkout -b v0.3.0
-  ```
-
-- Rechecking the current released tag version
-
-  ```shell
-  git describe --exact-match --tags $(git log -n1 --pretty='%h')
+  ``` shell
+  git clone https://github.com/AssetMantle/node.git
+  cd node
+  git checkout tags/v0.3.0
   ```
 
 - Install dependencies & make mantleNode binary
@@ -74,8 +64,9 @@
 - Verify the MantleNode version
 
   ```shell
-  mantleNode version --long
+  mantleNode version
   ```
+  > NOTE: Plese make sure the output of this command is  HEAD-5b2b0dcb37b107b0e0c1eaf9e907aa9f1a1992d9
 
 - Worried about typing? Below is a one-liner to install the mantleNode.
 

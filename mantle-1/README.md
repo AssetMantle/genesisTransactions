@@ -58,7 +58,7 @@ This document describes how to setup a mantle-1 chain node.
 
 # Make binary
   ```shell
-  cd node && make install
+  make install
   ```
 
 # Verify version

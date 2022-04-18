@@ -128,7 +128,7 @@ This document describes how to setup a mantle-1 chain node.
 ```
 * Create a Pull Request to the [main](https://github.com/AssetMantle/genesisTransactions) branch of the repository.
 > **NOTE:** Pull Request will be merged by the maintainers to confirm the inclusion of the validator at the genesis.The final genesis file will be published under the file `mantle-1/final_genesis.json`.
-* Genesis file hash can be verified by ` sha256sum ./mantle-1/final_genesis.json`. Hash is `0f8faa24ef02a00846c71a0215b15ddb71ee3296abc9723441bc69d1c2036846`
+* Genesis file hash can be verified by ` sha256sum ./mantle-1/final_genesis.json`. Hash is `49262b292ca0a8a97d605b6100ee17683f305bc707c7180ee044def47c85fff8`
 * Replace the contents of your `$HOME/.mantleNode/config/genesis.json` with that of `mantle-1/final_genesis.json`.
 * Add `persistent_peers` or `seeds` in `$HOME/.mantleNode/config/config.toml` from `mantle-1/final_peers.json` .
 

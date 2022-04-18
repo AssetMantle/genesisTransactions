@@ -46,7 +46,9 @@
 - Clone the repository of MantleNode
 
   ```shell
-  git clone -b v0.3.0-RC https://github.com/AssetMantle/node.git
+  git clone https://github.com/AssetMantle/node.git
+  cd node
+  git checkout tags/v0.3.0
   ```
 
 - Install dependencies & make mantleNode binary
@@ -58,7 +60,7 @@
 - Verify the MantleNode version
 
   ```shell
-  mantleNode version --long
+  mantleNode version
   ```
 
 ## Pre Genesis Validator Setup

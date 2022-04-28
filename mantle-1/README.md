@@ -167,6 +167,53 @@ sudo systemctl start mantle.service
 mantleNode start --x-crisis-skip-assert-invariants
 ```
 
+<a name="validator"></a>
+## Post Genesis Validator Setup
+
+> Make sure you setup everything (go, mantleNode, and create/recover account).
+
+### Initialize mantleNode
+
+``` shell
+    # This will create a directory named $HOME/.mantleNode to store configs and data of mantle-1 chain. You can also set your home directory of configuration by using --home=/path/to/your/home .
+
+mantleNode init <moniker-name> --chain-id mantle-1
+```
+
+- Replace the contents of your `$HOME/.mantleNode/config/genesis.json` with `mantle-1/final_genesis.json` from the main branch of this [repository](https://github.com/AssetMantle/genesisTransactions).
+
+- Verify the checksum `sha256sum genesis.json` matches `49262b292ca0a8a97d605b6100ee17683f305bc707c7180ee044def47c85fff8`.
+
+- Inside the file `$HOME/.mantleNode/config/config.toml`,
+
+  - Set seeds to `10de5165a61dd83c768781d438748c14e11f4397@65.2.55.250:26656`
+
+- Start the node
+
+``` shell
+mantleNode start --x-crisis-skip-assert-invariants
+```
+
+- Acquire $MNTL tokens to self delegate to your validator node. Minimum amount should be 1 $MNTL.
+- Wait for the blockchain to sync.
+- Send a create-validator transaction.
+  ```shell
+  manteNode tx staking create-validator \
+  --from <key-name> \
+  --amount <xxxxumntl> \
+  --pubkey "$(mantleNode tendermint show-validator)" \
+  --chain-id mantle-1 \
+  --moniker <validator-name> \
+  --commission-max-change-rate 0.01 \
+  --commission-max-rate 0.07 \
+  --commission-rate 0.02 \
+  --min-self-delegation="1" \
+  --details="XXXXXXXX" \
+  --security-contact="XXXXXXXX" \
+  --website="XXXXXXXX"
+  ```
+- You created a validator. Now keep running your validator node.
+
 
 ## Binary
 The binary can be downloaded from [here](https://github.com/AssetMantle/node/releases/tag/v0.3.0).

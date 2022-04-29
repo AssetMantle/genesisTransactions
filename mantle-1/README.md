@@ -32,6 +32,7 @@ This document describes how to setup a mantle-1 chain node.
   sudo apt-get install build-essential git -y
   ```
 
+<a name="install-go"></a>
 ### Install Go
 * Download Go version 1.17.9 , ref - [go's official website](https://go.dev/dl/).
   ```shell
@@ -48,7 +49,7 @@ This document describes how to setup a mantle-1 chain node.
   echo "export GOROOT=\"/usr/local/go\"" >> ~/.bashrc
   echo "export PATH=\"\$PATH:\$GOPATH/bin:\$GOROOT/bin\"" >> ~/.bashrc
   ```
-
+<a name="node"></a>
 ### Clone repository
   ``` shell
   git clone https://github.com/AssetMantle/node.git
@@ -134,6 +135,7 @@ This document describes how to setup a mantle-1 chain node.
 * Replace the contents of your `$HOME/.mantleNode/config/genesis.json` with that of `mantle-1/final_genesis.json`.
 * Add `persistent_peers` or `seeds` in `$HOME/.mantleNode/config/config.toml` from `mantle-1/final_peers.json` .
 
+<a name="#operation"></a>
 ## Node Operation
 It is recommended to use a service manager to run mantleNode. To setup system service, We need to create a file, for that please run this command in your terminal. `sudo touch /etc/systemd/system/mantle.service` and paste the below contents in the **mantle.service** file. Feel free to edit this system service file, as per your need.
 ```
@@ -170,7 +172,7 @@ mantleNode start --x-crisis-skip-assert-invariants
 <a name="validator"></a>
 ## Post Genesis Validator Setup
 
-> Make sure you setup everything (go, mantleNode, and create/recover account).
+> Make sure you setup everything [go](#install-go), [mantleNode](#node), and [create/recover](#account) account.
 
 ### Initialize mantleNode
 
@@ -182,6 +184,9 @@ mantleNode init <moniker-name> --chain-id mantle-1
 
 - Replace the contents of your `$HOME/.mantleNode/config/genesis.json` with `mantle-1/final_genesis.json` from the main branch of this [repository](https://github.com/AssetMantle/genesisTransactions).
 
+```shell
+    curl -fsSL https://raw.githubusercontent.com/AssetMantle/genesisTransactions/main/mantle-1/final_genesis.json >> genesis.json
+```
 - Verify the checksum `sha256sum genesis.json` matches `49262b292ca0a8a97d605b6100ee17683f305bc707c7180ee044def47c85fff8`.
 
 - Inside the file `$HOME/.mantleNode/config/config.toml`,
@@ -212,7 +217,7 @@ mantleNode start --x-crisis-skip-assert-invariants
   --security-contact="XXXXXXXX" \
   --website="XXXXXXXX"
   ```
-- You created a validator. Now keep running your validator node.
+- You created a validator. Now keep running your validator node and setup [systemd file](#operation).
 
 
 ## Binary

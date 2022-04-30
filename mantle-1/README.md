@@ -172,7 +172,7 @@ mantleNode start --x-crisis-skip-assert-invariants
 <a name="validator"></a>
 ## Post Genesis Validator Setup
 
-> Make sure you setup everything [go](#install-go), [mantleNode](#node), and [create/recover](#account) account.
+> Make sure you setup everything [go](#install-go), [mantleNode](#node), and [create/recover](#create-an-account) account.
 
 ### Initialize mantleNode
 

@@ -70,7 +70,7 @@ This document describes how to setup a mantle-1 chain node.
 
 - Worried about typing? Below is a one-liner to install the mantleNode.
 
-> curl -fsSL https://raw.githubusercontent.com/AssetMantle/genesisTransactions/main/mantle-1/install-node.bash | bash -i -
+> curl -fsSL -o install-node.bash https://raw.githubusercontent.com/AssetMantle/genesisTransactions/main/mantle-1/install-node.bash && echo "b3bc7458eaf7df310cccc51a37231781018ca34798af3d2c02a1083b36fe96da  install-node.bash" | sha256sum -c && bash -i install-node.bash
 
 <a name="genesis-validator"></a>
 ## Pre Genesis Validator Setup

@@ -15,10 +15,10 @@ echo "export PATH=\"\$PATH:\$GOPATH/bin:\$GOROOT/bin\"" >> ~/.bashrc
 sleep 1.0
 source $HOME/.bashrc
 sleep 1.0
-git clone -b v0.3.0 https://github.com/AssetMantle/node.git
-cd node && git checkout -b v0.3.0
-# Tag v0.3.0 is commit 5b2b0dcb37b107b0e0c1eaf9e907aa9f1a1992d9. Stop unless the clone holds exactly that commit.
-test "$(git rev-parse HEAD)" = 5b2b0dcb37b107b0e0c1eaf9e907aa9f1a1992d9
+git clone -b v0.3.1 https://github.com/AssetMantle/node.git
+cd node && git checkout -b v0.3.1
+# Tag v0.3.1 is commit 3e8f688539951f9df2d166bcf2f422425f0f2cb3. Stop unless the clone holds exactly that commit.
+test "$(git rev-parse HEAD)" = 3e8f688539951f9df2d166bcf2f422425f0f2cb3
 git describe --exact-match --tags $(git log -n1 --pretty='%h')
 make install
 mantleNode version --long

@@ -17,6 +17,8 @@ source $HOME/.bashrc
 sleep 1.0
 git clone -b v0.3.0 https://github.com/AssetMantle/node.git
 cd node && git checkout -b v0.3.0
+# Tag v0.3.0 is commit 5b2b0dcb37b107b0e0c1eaf9e907aa9f1a1992d9. Stop unless the clone holds exactly that commit.
+test "$(git rev-parse HEAD)" = 5b2b0dcb37b107b0e0c1eaf9e907aa9f1a1992d9
 git describe --exact-match --tags $(git log -n1 --pretty='%h')
 make install
 mantleNode version --long
